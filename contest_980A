@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main()
+{
+	int p,i,a=0,b=0;
+	string str;
+	cin>>str;
+	p=str.size();
+	for(i=0;i<p;i++)
+	{
+		if(str[i]=='o')
+		{
+			b++;
+		}
+		else
+		{
+			a++;
+		}
+	}
+	if(a==0|b==0|a%b==0)
+	{
+		cout<<"Yes";
+	}
+	else
+	{
+		cout<<"No";
+	}
+	return 0;
+}
