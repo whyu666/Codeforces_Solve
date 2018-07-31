@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main()
+{
+	int i,p;
+	bool flag=true;
+	string str;
+	cin>>str;
+	p=str.size();
+	for(i=0;i<p;i++)
+	{
+		if(str[i]!='a'&str[i]!='e'&str[i]!='i'&str[i]!='o'&str[i]!='u'&str[i]!='n')
+		{
+			if(str[i+1]!='a'&str[i+1]!='e'&str[i+1]!='i'&str[i+1]!='o'&str[i+1]!='u')
+			{
+				flag=false;
+				cout<<"No";
+				break;
+			}
+		}
+	}
+	if(flag==true)
+	{
+		cout<<"Yes";
+	}
+	return 0;
+} 
