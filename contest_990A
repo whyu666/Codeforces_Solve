@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	long long int n,m,a,b,p=0,q1=0,q2=0;
+	cin>>n>>m>>a>>b;
+	if(n%m==0)
+	{
+		cout<<0; 
+	}
+	else
+	{
+		p=n%m;
+		q1=(m-p)*a;
+		q2=p*b;
+		if(q1<=q2)
+		{
+			cout<<q1;
+		}
+		else
+		{
+			cout<<q2;
+		}
+	}
+	return 0;
+}
