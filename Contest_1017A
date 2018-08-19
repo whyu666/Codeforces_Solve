@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int n,i,j,temp;
+	cin>>n;
+	int a[n+5],b[n+5],c[n+5],d[n+5],s[n+5],p[n+5];
+	for(i=1;i<=n;i++)
+	{
+		cin>>a[i]>>b[i]>>c[i]>>d[i];
+		s[i]=0;
+		p[i]=i;
+	}
+	for(i=1;i<=n;i++)
+	{
+		s[i]=a[i]+b[i]+c[i]+d[i];
+	}
+	for(i=1;i<=n;i++)
+	{
+		for(j=1;j<=n-1;j++)
+		{
+			if(s[j]<s[j+1])
+			{
+				temp=s[j];
+			    s[j]=s[j+1];
+			    s[j+1]=temp;
+			    temp=p[j];
+			    p[j]=p[j+1];
+			    p[j+1]=temp;
+			}
+		}
+	}
+	for(i=1;i<=n;i++)
+	{
+		if(p[i]==1)
+		{
+			cout<<i;
+			break;
+		}
+	}
+	return 0;
+}
