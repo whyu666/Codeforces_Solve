@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i,n,k,j,ans=0;
+	cin>>n>>k;
+	int a[n+3],b[k+3],c[k+3];
+	for(i=1;i<=n;i++)
+	{
+		cin>>a[i];
+	}
+	bool flag;
+	for(i=1;i<=k;i++)
+	{
+		b[i]=-1;
+	}
+	for(i=1;i<=n;i++)
+	{
+		flag=true;
+		for(j=1;j<=i;j++)
+		{
+			if(a[i]==b[j])
+			{
+				flag=false;
+			}
+		}
+		if(flag)
+		{
+			ans++;
+			b[ans]=a[i];
+			c[ans]=i;
+		}
+		if(ans==k)
+		{
+			break;
+		}
+	}
+	if(ans!=k)
+	{
+		cout<<"NO";
+	}
+	else
+	{
+		cout<<"YES"<<endl;
+		for(i=1;i<=k;i++)
+		{
+			cout<<c[i]<<endl;
+		}
+	}
+	return 0;
+}
