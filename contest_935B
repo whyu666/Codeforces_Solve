@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i,n,j=1,ans=0;
+	cin>>n;
+	char a[n+3];
+	int x[n+3],y[n+3];
+	cin>>a;
+	for(i=0;i<=n;i++)
+	{
+		x[i]=0;
+		y[i]=0;
+	}
+	bool flag=true;
+	for(i=0;i<n;i++)
+	{
+		x[j]=x[j-1];
+		y[j]=y[j-1];
+		if(a[i]=='U')
+		{
+			y[j]++;
+		}
+		if(a[i]=='R')
+		{
+			x[j]++;
+		}
+		if(flag==false)
+		{
+			if( ( (x[j-2]+2==x[j-1]+1) & (x[j-1]+1==x[j]) ) | ( (y[j-2]+2==y[j-1]+1) & (y[j-1]+1==y[j]) ) )
+			{
+				ans++;
+			}
+			flag=true;
+		}
+		if( (x[j]==y[j]) & (j<n) )
+		{
+			flag=false;
+		}
+		j++;
+	}
+	cout<<ans;
+	return 0;
+}
