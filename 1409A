@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int t,i,max,min,m;
+	cin>>t;
+	int a[t+3],b[t+3];
+	for(i=0;i<t;i++)
+	{
+		cin>>a[i];
+		cin>>b[i];
+	}
+	for(i=0;i<t;i++)
+	{
+		if(a[i]>=b[i])
+		{
+			max=a[i];
+			min=b[i];
+		}
+		if(a[i]<b[i])
+		{
+			max=b[i];
+			min=a[i];
+		}
+		m=max-min;
+		if(m%10==0)
+		{
+			cout<<(m/10)<<endl;
+		}
+		else
+		{
+			cout<<((m/10)+1)<<endl;
+		}
+	}
+	return 0;
+}
